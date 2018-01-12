@@ -12,9 +12,11 @@ define('PathPostfix', 'Controller.php');
 
 //>исспользуемый шаблон
 $template = 'default';
+$templateAdmin = 'admin';
 
 //Пути к файлам шаблонов (*.tpl)
 define('TemplaxtePrefix', "views/{$template}/");
+define('TemplaxteAdminPrefix', "views/{$templateAdmin}/");
 define('TemplatePostfix', '.tpl');
 
 //Пути к файлам шаблонов в вебпространстве
@@ -22,6 +24,7 @@ define ('TemplateWebPath', "templates/{$template}/");//часть шаблоно
 //находиться в вебпространстве, т.е. в папке www // но это в примере, а я
 //по логике должен в корне это все разместить. Т.е. такая запись как раз и под
 //ходит, т.к. все в одной папаке-корневой.
+define ('TemplateAdminWebPath', "templates/{$templateAdmin}/");
 //<
 
 //>Инициализация шаблонизатора Smarty:

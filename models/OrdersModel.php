@@ -56,5 +56,37 @@ function makeNewOrder($name, $phone, $adress){
     return false;    
 }
 
-
-
+/**
+ * Получить список заказов с привязкой к продуктам для пользователя $userId
+ * 
+ * @param integer $userId ID пользователя
+ * @return array массив заказов с привязкой к продуктам
+ */
+function getOrdersWithProductsByUser($userId){
+    
+    $userId = intval($userId);// integer secure
+    $sql = "SELECT * FROM orders "
+            . "WHERE "
+            . "`user_id` = '{$userId}' "
+            . "ORDER BY id DESC";
+    
+    $rs = mysql_query($sql);
+    
+    $smartyRs = array();
+    while ($row = mysql_fetch_assoc($rs)) {
+        $rsChildren = getPurchaseForOrder($row['id']);
+        
+        if($row['status'] == 0){
+            $row['status'] = 'Заказ не оплачен';
+        } else {
+            $row['status'] = 'Заказ оплачен';
+        }
+            
+        if($rsChildren){
+            $row['children'] = $rsChildren;
+            $smartyRs[] = $row;
+        }
+    }
+    //d($smartyRs);
+    return $smartyRs;
+}

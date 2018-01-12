@@ -30,3 +30,23 @@ function setPurchaseForOrder($orderId, $cart){
     
     return $rs;
 }
+
+/**
+ * Получить данные покупки юзера привязанной к айди заказа
+ * 
+ * @param integer $orderId
+ * @return array
+ */
+function getPurchaseForOrder($orderId){
+    
+    $sql = "SELECT `pe`.*, `ps`.`name` "
+            . "FROM purchase as `pe` JOIN products as `ps` "
+            . "ON `pe`.product_id = `ps`.id "
+            . "WHERE `pe`.order_id = '{$orderId}'";//получаем объединенную
+            // таблицу по принцыпу, чтобы поле product_id таблицы purchase
+            //  соответвтовало полю id тблицы products
+    
+    $rs = mysql_query($sql);
+    return createSmartyRsArray($rs);
+    
+}

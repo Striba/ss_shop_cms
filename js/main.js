@@ -260,10 +260,22 @@ function saveOrder(){
             
             
         }
-        
-        
     });
-    
-    
+}
+
+/**
+ * Показывать или прятать данные об заказе
+ * 
+ */
+function showProducts(id){
+    console.log('js-id: ' + id);
+    var objName = '#purchasesForOrderId_' + id;
+    if( jQuery(objName).css('display') != 'table-row'){
+        console.log('jaaaa '+objName);
+        jQuery(objName).show();
+    } else {
+        //console.log('js-id: ' + jQuery(objName).css('display'))
+        jQuery(objName).hide();
+    }
     
 }
