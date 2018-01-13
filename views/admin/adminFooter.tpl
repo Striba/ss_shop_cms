@@ -6,6 +6,6 @@
     Footer
 </div>
 
-<script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" src="/templates/admin/js/admin.js"></script>
 </body>
 </html>
