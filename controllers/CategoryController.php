@@ -25,15 +25,17 @@ function indexAction ($smarty){
     $rsProducts = null;
             
     $rsCategory = getCatById($catId);
-    
+    //d($rsCategory);
     //если главная категория, то показываем дочернюю категорию,
     //иначе показывает товар
     if($rsCategory['parent_id'] == 0){
+        //d('WE ARE');
          $rsChildCats = getChildrenForCat($catId);
     } else {
+        //d('WE NOT');
          $rsProducts = getProductsByCat($catId);
     }
-     //d($rsChildCats);
+    //d($rsProducts);
     $rsCategories = getAllMainCatsWithChildren();
 
     $smarty->assign('pageTitle', 'Товары категории '.$rsCategory['name']);

@@ -16,7 +16,7 @@ function getChildrenForCat($catId){
     $sql = "SELECT * "
             . "FROM categories "
             . "WHERE parent_id = '{$catId}'";
-    
+    //d($sql);
     $rs = mysql_query($sql);
 
     return createSmartyRsArray($rs);
@@ -108,4 +108,54 @@ function insertCat($catName, $catParentId = 0){
     $id = mysql_insert_id();
     
     return $id;
+}
+
+/**
+ * Получить все категории
+ * 
+ * @return array массив категорий
+ * 
+ */
+function getAllCategories(){
+    
+    $sql = "SELECT * FROM categories "
+            . "ORDER BY parent_id ASC ";
+    
+    $rs = mysql_query($sql);
+    $rs = createSmartyRsArray($rs);
+    
+    return $rs;
+}
+
+/**
+ * Обновление категории
+ * 
+ * @param integer $itemId ID категории
+ * @param integer $parentId ID главной категории
+ * @param string $newName новое имя категории
+ * 
+ * @return type
+ */
+function updateCategoryData($itemId, $parentId = -1, $newName = '' ){
+    
+    $set = array();
+    
+    if($newName){
+       $set[] = "`name` = '{$newName}'"; 
+    }
+    
+    if($parentId > -1){
+        $set[] = "`parent_id` = '{$parentId}'";
+    }
+   //d($set); 
+    $setStr = implode($set, ", ");
+    //d($set);
+    $sql = "UPDATE categories "
+            . "SET {$setStr} "
+            . "WHERE id = '{$itemId}'";
+    
+    //d($sql);        
+    $rs = mysql_query($sql);
+    
+    return $rs;
 }

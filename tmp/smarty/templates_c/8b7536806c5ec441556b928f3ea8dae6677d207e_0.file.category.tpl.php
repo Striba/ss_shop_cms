@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-12-27 16:16:19
+/* Smarty version 3.1.30, created on 2018-01-16 15:13:33
   from "D:\programming\open_server_5_2_6_basic\OS526\OpenServer\domains\ss_shop_cms\views\default\category.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a439d2394bd20_01368854',
+  'unifunc' => 'content_5a5dec6d90ec16_54602894',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8b7536806c5ec441556b928f3ea8dae6677d207e' => 
     array (
       0 => 'D:\\programming\\open_server_5_2_6_basic\\OS526\\OpenServer\\domains\\ss_shop_cms\\views\\default\\category.tpl',
-      1 => 1514380571,
+      1 => 1516104806,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a439d2394bd20_01368854 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a5dec6d90ec16_54602894 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <h1>Товары категории <?php echo $_smarty_tpl->tpl_vars['rsCategory']->value['name'];?>
 </h1>
 
     <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['rsProduct']->value, 'item', false, NULL, 'products', array (
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['rsProducts']->value, 'item', false, NULL, 'products', array (
   'iteration' => true,
 ));
 if ($_from !== null) {
@@ -64,14 +64,11 @@ foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
         <h2><a href="/category/<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 /"><?php echo $_smarty_tpl->tpl_vars['item']->value['name'];?>
 </a></h2>
-        <?php
-}
-} else {
-?>
-
-        <h3>Пока пусто</h3>
+        
+        <!-- <h3>Пока пусто</h3> -->
 
     <?php
+}
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
