@@ -71,7 +71,7 @@ function categoryAction($smarty){
 function updatecategoryAction(){
     
     $itemId = $_POST['itemId'];
-    $parentId = $POST['parentId'];
+    $parentId = $_POST['parentId'];
     $newName = $_POST['newName'];
     //d($newName);
     $res = updateCategoryData($itemId, $parentId, $newName);
