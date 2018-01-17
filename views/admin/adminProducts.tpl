@@ -76,7 +76,7 @@
                             {if $item['image']}
                                 <img src="/images/products/{$item['image']}" width="100" />
                             {/if}
-                            <form action="/admin/upload/" method='post' enctype="multipart/form-data">
+                            <form action="/admin/upload/" method="POST" enctype="multipart/form-data">
                                 <input type="file" name="filename" /><br />
                                 <input type='hidden' name="itemId" value="{$item['id']}"/>
                                 <input type='submit' value="Загрузить" /><br />

@@ -73,6 +73,6 @@ function createSmartyRsArray($rs){
  */
 function redirect($url){
     if(! $url) $url = '/';
-    header("Location: {'$url'}");
+    header("Location: {$url}");
     exit;
 }

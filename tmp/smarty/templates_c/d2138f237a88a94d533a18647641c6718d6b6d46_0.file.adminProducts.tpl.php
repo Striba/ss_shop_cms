@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-01-16 20:14:46
+/* Smarty version 3.1.30, created on 2018-01-17 12:40:04
   from "D:\programming\open_server_5_2_6_basic\OS526\OpenServer\domains\ss_shop_cms\views\admin\adminProducts.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a5e3306919952_74916702',
+  'unifunc' => 'content_5a5f19f46fa680_82604699',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd2138f237a88a94d533a18647641c6718d6b6d46' => 
     array (
       0 => 'D:\\programming\\open_server_5_2_6_basic\\OS526\\OpenServer\\domains\\ss_shop_cms\\views\\admin\\adminProducts.tpl',
-      1 => 1516122378,
+      1 => 1516181973,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a5e3306919952_74916702 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a5f19f46fa680_82604699 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <h2>Товар</h2>
 
@@ -140,7 +140,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                 <img src="/images/products/<?php echo $_smarty_tpl->tpl_vars['item']->value['image'];?>
 " width="100" />
                             <?php }?>
-                            <form action="/admin/upload/" method='post' enctype="multipart/form-data">
+                            <form action="/admin/upload/" method="POST" enctype="multipart/form-data">
                                 <input type="file" name="filename" /><br />
                                 <input type='hidden' name="itemId" value="<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 "/>

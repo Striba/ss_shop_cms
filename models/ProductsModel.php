@@ -158,3 +158,10 @@ function updateProduct($itemId, $itemName, $itemPrice, $itemStatus, $itemDesc,
     
     return $rs;
 }
+
+function updatePruductImage($itemId, $newFileName){
+    
+    $rs = updateProduct($itemId, null, null, null, null, null, $newFileName);
+    
+    return $rs;
+}

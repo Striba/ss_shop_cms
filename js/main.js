@@ -268,10 +268,10 @@ function saveOrder(){
  * 
  */
 function showProducts(id){
-    console.log('js-id: ' + id);
+    //console.log('js-id: ' + id);
     var objName = '#purchasesForOrderId_' + id;
     if( jQuery(objName).css('display') != 'table-row'){
-        console.log('jaaaa '+objName);
+        //console.log('jaaaa '+objName);
         jQuery(objName).show();
     } else {
         //console.log('js-id: ' + jQuery(objName).css('display'))

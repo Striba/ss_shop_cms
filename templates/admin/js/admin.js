@@ -137,5 +137,76 @@ function updateProduct(itemId){
             alert(data['message']);
         }
     });
+}
+
+
+/**
+ * Показать развернутую информацию товара заказа
+ * 
+ * 
+ */
+function showProducts(id){
+    //console.log('js-id: ' + id);
+    var objName = '#purchasesForOrderId_' + id;
+    if( jQuery(objName).css('display') != 'table-row'){
+        //console.log('jaaaa '+objName);
+        jQuery(objName).show();
+    } else {
+        //console.log('js-id: ' + jQuery(objName).css('display'))
+        jQuery(objName).hide();
+    }
+}
+
+/**
+ * Изменение статуса заказа
+ * 
+ */
+function updateOrderStatus(itemId){
     
+  var status;
+if($("#itemStatus_" + itemId).is(":not(:checked)")){
+    status = 0;
+}else{
+    status = 1;
+}
+  
+  var postData = {itemId: itemId, status: status};
+  
+  jQuery.ajax({
+      type: 'post',
+      url: '/admin/setorderstatus/',
+      data: postData,
+      dataType: 'json',
+      success: function(data){
+          if(! data['success']){
+              alert(data['message']);
+          }
+      }
+  });
+  
+}
+
+/**
+ * Изменение информации об оплате заказа
+ * 
+ */
+function updateDatePayment(itemId){
+    
+  var datePayment = jQuery('#datePayment_' + itemId).val();
+  var postData = {itemId: itemId, datePayment: datePayment};
+  
+    //console.log('NOOOSSS');//сюда доходит
+  jQuery.ajax({
+      type: 'post',
+      url: '/admin/setorderdatepayment/',
+      data: postData,
+      dataType: 'json',
+      success: function(data){
+          if(! data['success']){
+              alert(data['message']);
+          } else {
+              //console.log('YEEESSS');
+          }
+      }
+  });
 }
