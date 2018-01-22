@@ -20,10 +20,7 @@ define('TemplaxteAdminPrefix', "views/{$templateAdmin}/");
 define('TemplatePostfix', '.tpl');
 
 //Пути к файлам шаблонов в вебпространстве
-define ('TemplateWebPath', "templates/{$template}/");//часть шаблонов будут
-//находиться в вебпространстве, т.е. в папке www // но это в примере, а я
-//по логике должен в корне это все разместить. Т.е. такая запись как раз и под
-//ходит, т.к. все в одной папаке-корневой.
+define ('TemplateWebPath', "templates/{$template}/");
 define ('TemplateAdminWebPath', "templates/{$templateAdmin}/");
 //<
 

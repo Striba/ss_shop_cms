@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName admin
+AuthUserFile D:\programming\open_server_5_2_6_basic\OS526\OpenServer\domains\ss_shop_cms\config\pwdaccess
+require valid-user
